@@ -1,21 +1,21 @@
-djsniper
-========
+<p align="center">
+  <p align="center">
+    <a href="https://justdjango.com/?utm_source=github&utm_medium=logo" target="_blank">
+      <img src="https://assets.justdjango.com/static/branding/logo.svg" alt="JustDjango" height="72">
+    </a>
+  </p>
+  <p align="center">
+    The Definitive Django Learning Platform.
+  </p>
+</p>
 
-Django Self-Hosted NFT Rarity Sniper
+# DjSniper
+
+Self-Hostable NFT rarity tool built with Django
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-
-### Notes
-
-How to calculate rarity: https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
-ERC721 Token standard: https://ethereum.org/en/developers/docs/standards/tokens/erc-721/
-Look for token on etherscan -> contract -> read contract -> tokenURI method
-Get the ABI from the contract on etherscan ->  contract -> code -> Contract ABI
-Interacting with contracts via web3.py -> https://web3py.readthedocs.io/en/latest/examples.html#interacting-with-existing-contracts
-How to find your NFT on IPFS -> https://medium.com/coinmonks/how-to-find-your-nft-on-ipfs-e51bc5e7c8a1#:~:text=Find%20your%20NFT's%20Metadata&text=Look%20for%20a%20function%20called,NFT%20(see%20figure%201).
-License
 
 :   MIT
 
@@ -102,3 +102,12 @@ The following details how to deploy this application.
 
 See detailed [cookiecutter-django Docker
 documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
+
+---
+
+<i>Other places you can find us:</i><br>
+
+<a href="https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ" target="_blank"><img src="https://img.shields.io/badge/YouTube-%23E4405F.svg?&style=flat-square&logo=youtube&logoColor=white" alt="YouTube"></a>
+<a href="https://www.twitter.com/justdjangocode" target="_blank"><img src="https://img.shields.io/badge/Twitter-%231877F2.svg?&style=flat-square&logo=twitter&logoColor=white" alt="Twitter"></a>
+
+</div>
