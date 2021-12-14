@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="max-w-xl mx-auto">
+    <div class="flex items-center justify-between border-b border-gray-200 py-5">
+        <div>
+            <h1 class="text-3xl font-bold leading-tight text-gray-900">
+                {{ object.name }}
+            </h1>
+        </div>
+        <div>
+            <a href="?order=rank"
+                class="bg-blue-200 text-blue-600 hover:bg-blue-200 hover:text-blue-800 shadow rounded px-3 py-2">
+                Order
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <p>{{ object.number_of_nfts }} NFTs</p>
+        <div class="mt-5 grid grid-cols-4 gap-4">
+            {% for nft in nfts %}
+            <div class="py-3 px-3 border border-gray-200 shadow-sm">
+                <img class="w-full rounded-md" src="https://ipfs.io/ipfs/{{ nft.image_url }}" />
+                <div class="mt-1">
+                    <h1 class="text-lg text-gray-800 font-bold">#{{ nft.nft_id }}</h1>
+                    <p class="text-base text-gray-600">Score: {{ nft.rarity_score|floatformat:2 }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="py-10">
+            <a href="{% url 'sniper:fetch-nfts' object.id %}"
+                class="bg-green-200 text-green-600 hover:bg-green-200 hover:text-green-800 shadow rounded px-3 py-2">
+                Fetch NFTs
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a href="{% url 'sniper:project-clear' object.id %}"
+            class="bg-gray-200 text-gray-600 hover:bg-gray-200 hover:text-gray-800 shadow rounded px-3 py-2">
+            Clear NFT data
+        </a>
+        <a href="{% url 'sniper:project-update' object.id %}"
+            class="ml-3 bg-blue-200 text-blue-600 hover:bg-blue-200 hover:text-blue-800 shadow rounded px-3 py-2">
+            Update
+        </a>
+        <a href="{% url 'sniper:project-delete' object.id %}"
+            class="ml-3 bg-red-200 text-red-600 hover:bg-red-200 hover:text-red-800 shadow rounded px-3 py-2">
+            Delete
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

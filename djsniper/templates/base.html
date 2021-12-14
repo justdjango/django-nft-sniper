@@ -1,0 +1,96 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block title %}Dj NFT Sniper{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Django Self-Hosted NFT Rarity Sniper">
+  <meta name="author" content="Matthew Freire">
+
+  <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+  {% block css %}
+  <!-- Your stuff: Third-party CSS libraries go here -->
+  <!-- This file stores project-specific CSS -->
+  <link href="{% static 'css/project.css' %}" rel="stylesheet">
+  {% endblock %}
+  <!-- Le javascript
+    ================================================== -->
+  {# Placed at the top of the document so pages load faster with defer #}
+  {% block javascript %}
+  <!-- place project specific Javascript in this file -->
+  <script defer src="{% static 'js/project.js' %}"></script>
+  {% endblock javascript %}
+
+</head>
+
+<body class="h-full">
+
+  <div class="min-h-full">
+    <nav class="bg-white border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="hidden sm:-my-px sm:flex sm:space-x-8">
+              <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+              <a href="{% url 'sniper:project-list' %}"
+                class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                aria-current="page">
+                Projects
+              </a>
+
+              <a href="{% url 'sniper:project-create' %}"
+                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                Add Project
+              </a>
+
+            </div>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <!-- Profile dropdown -->
+            <div class="ml-3 relative">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="py-10">
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      <main>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          {% block content %}
+          <p>Use this document as a way to quick start any new project.</p>
+          {% endblock content %}
+        </div>
+      </main>
+    </div>
+  </div>
+
+  {% block modal %}{% endblock modal %}
+
+  {% block inline_javascript %}
+  {% comment %}
+  Script tags with only code, no src (defer by default). To run
+  with a "defer" so that you run run inline code:
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */ });
+  </script>
+  {% endcomment %}
+  {% endblock inline_javascript %}
+</body>
+
+</html>

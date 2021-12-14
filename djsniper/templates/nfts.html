@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-3xl font-bold leading-tight text-gray-900">
+    Bored Ape Yacht Club
+</h1>
+<div class="mt-5 grid grid-cols-4 gap-4">
+    {% for nft in nfts %}
+    <div class="py-3 px-3 border border-gray-200 shadow-sm">
+        <img class="w-full rounded-md" src="https://ipfs.io/ipfs/{{ nft.image_url }}" />
+        <div class="mt-1">
+            <h1 class="text-lg text-gray-800 font-bold">#{{ nft.nft_id }}</h1>
+            <p class="text-base text-gray-600">Score: {{ nft.rarity_score|floatformat:2 }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=djsniper
+POSTGRES_USER=uwQRXKxdEXATlomoPpEZuhvGZfAMNJmY
+POSTGRES_PASSWORD=wac84lgvKcFF0g6DIB5pOeVpXS0mfqo4dtdl4TCE1lynfvUL4SW07qM8sfSeByWZ
