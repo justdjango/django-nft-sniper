@@ -17,8 +17,6 @@ Self-Hostable NFT rarity tool built with Django
 
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-:   MIT
-
 Settings
 --------
 
